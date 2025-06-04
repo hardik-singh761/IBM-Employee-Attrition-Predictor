@@ -166,7 +166,9 @@ if st.button("Predict Attrition"):
 
     query=query.reshape(1, 30)
     ans=pipe.predict(query)[0]
-    if ans==1:
+    if age==0:
+        st.title('None')
+    elif ans==1:
         st.title("The Predicted Attrition of Employee = Yes")
     else:
         st.title("The Predicted Attrition of Employee = No")
